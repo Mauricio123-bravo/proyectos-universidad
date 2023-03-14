@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layoutListar :: head">
+
+</head>
+
+<body class="body">
+<header th:replace="layout/layoutListar :: header"></header>
+</br>
+<h3 th:text="${titulo}" style="text-align: center;color: #373b3e"></h3>
+<br/>
+<div class="container" >
+    <table id="tablax" class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <td> Id Conductor </td>
+            <td> Nombre Conductor </td>
+            <td> Apellido Conductor </td>
+            <td> Estado </td>
+            <td> Empresa</td>
+            <td> Vehiculo</td>
+            <td></td>
+            <td></td>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="conductor: ${conductor}" th:if="${conductor.estado}==true" >
+            <td th:text=" ${conductor.idconductor}"></td>
+            <td th:text=" ${conductor.nombreconductor}"></td>
+            <td th:text=" ${conductor.apellidoconductor}" ></td>
+            <td th:if=" ${conductor.estado}==true" th:text="ACTIVE"></td>
+            <td th:text=" ${conductor.idempresa.nombreempresa}"></td>
+            <td th:text=" ${conductor.idvehiculo.placas}"></td>
+            <!-- <td><a class="btn btn-danger btn-xs" th:href="@{/eliminarConductor/} + ${conductor.idconductor}" th:text="EliminarBD" onclick="return confirm('¿Esta seguro de esliminar el registro?')"></a></td>-->
+            <td><a class="btn btn-danger" th:href="@{/eliminarIdCon/}+${conductor.idconductor}" th:text="Eliminar" onclick="return confirm('¿Esta seguro de eliminar el registro?')"></a></td>
+            <td><a class="btn btn-info btn-xs" th:href="@{/editarConductor/{id}(id=${conductor.idconductor})}" th:text="Editar"  ></a></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/crearConductor}" class="btn btn-outline-primary">Nuevo Conductor</a>
+    </br>
+
+    <a style="font-size: 18px" href="/">Regresar</a>
+</div>
+
+
+<footer th:replace="layout/layoutListar :: footer"></footer>
+</body>
+</html>

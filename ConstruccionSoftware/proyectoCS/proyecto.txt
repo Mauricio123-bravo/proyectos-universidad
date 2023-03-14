@@ -1,0 +1,97 @@
+CREATE TABLE sistemaOperativo(
+
+	idsistemao SERIAL PRIMARY KEY NOT NULL,
+	nombresis VARCHAR(200) NOT NULL,
+	ultimaversion VARCHAR(20) NOT NULL,
+	descripcion VARCHAR(400) NOT NULL
+
+
+);
+
+ALTER TABLE sistemaOperativo OWNER TO user_node;
+
+CREATE TABLE DistriVersion(
+
+	id_distriversion SERIAL PRIMARY KEY NOT NULL,
+	nombredv VARCHAR(200) NOT NULL,
+      descripcion VARCHAR(400) NOT NULL,
+	idsistema INT4 NOT NULL
+
+
+);
+
+
+ALTER TABLE DistriVersion OWNER TO user_node;
+
+
+CREATE TABLE Provedor(
+
+	idprovedor SERIAL PRIMARY KEY NOT NULL,
+	nombrepro VARCHAR(200) NOT NULL,
+	idsistema INT4 NOT NULL
+
+
+);
+
+
+ALTER TABLE Provedor OWNER TO user_node;
+
+
+ALTER TABLE DistriVersion ADD CONSTRAINT
+iddis_sistemas_fk FOREIGN KEY
+(idsistema) REFERENCES sistemaOperativo(idsistemaO )
+ON DELETE CASCADE;
+
+ALTER TABLE Provedor ADD CONSTRAINT
+idprov_sistemas_fk FOREIGN KEY
+(idsistema) REFERENCES sistemaOperativo(idsistemaO )
+ON DELETE CASCADE;
+
+
+
+
+INSERT INTO sistemaOperativo(nombresis,ultimaVersion,descripcion) VALUES ('Windows', 'Windows 11', 'Windows es un sistema operativo creado por Microsoft. Consiste en un conjunto de programas que permiten la ejecución de los recursos que tiene un ordenador.
+ El significado del término (windows, ventanas) hace alusión a su interfaz gráfica, que presenta un modelo basado en tareas y compartimentos independientes, con sus propios menús y controles.'); 
+
+INSERT INTO sistemaOperativo(nombresis,ultimaVersion,descripcion) VALUES ('Linux', '5.12-rc4', 'Linux es un sistema operativo gratuito elaborado por una comunidad de desarrolladores de software de código abierto. 
+Linux es una alternativa a los sistemas operativos Windows y OS/X, más conocidos. Al contrario que estos sistemas operativos más habituales, Linux es un proyecto de colaboración masiva que cualquier usuario puede cambiar. '); 
+
+INSERT INTO sistemaOperativo(nombresis,ultimaVersion,descripcion) VALUES ('MacOS', 'macOS 12', 'Es un sistema operativo diseñado por Apple que está instalado en todos los equipos creados por la compañía Apple Inc., y son conocidos generalmente como Mac.
+A diferencia de Windows que puede ser usado en equipos de diferentes fabricantes, macOS está diseñado específicamente para computadores fabricados por Apple. Esto implica que el ordenador tiene un mejor funcionamiento. ');
+
+
+
+
+INSERT INTO DistriVersion (nombredv, descripcion , idsistema ) VALUES ('Windows 8', 'Aquel 25 de octubre de 2012 recibimos a Windows 8 y una de las peores cosas que hizo la empresa fue quitar el botón de inicio, algo que genero mucha controversia. 
+Por suerte, el botón se podía agregar con una app muy interesante, luego se lanzó una versión que incluía dicho botón. Pero el daño estaba hecho.', 1); 
+INSERT INTO DistriVersion(nombredv, descripcion , idsistema ) VALUES ('Windows 10', 'Pasaron tres años y Microsoft lanzó la mejor versión del sistema operativo: Windows 10.
+No podemos quejarnos ya que se encuentra perfectamente optimizado en todo sentido, ideal para trabajo y para juegos.', 1); 
+INSERT INTO DistriVersion(nombredv, descripcion , idsistema ) VALUES ('Windows 11', 'Es la versión más reciente del sistema operativo, anunciado en Junio de 2021, 
+en este momento aún se encuentra en fase Beta y el lanzamiento al publico en general será a finales de año y será gratuito para todas las personas que dispongan de Windows 10 y de un PC compatible.', 1); 
+
+
+
+INSERT INTO DistriVersion (nombredv, descripcion , idsistema ) VALUES ('Debian', 's una de las distribuciones de Linux más antigua y popular al mismo tiempo. Debian es un sistema operativo libre que ha sido creado por todo tipo de usuarios, 
+es un sistema operativo colaborativo en el que trabajan todo tipo de personas para actualizarlo, añadir funciones y mantenerlo siempre al día para que sea práctico.', 2); 
+INSERT INTO DistriVersion(nombredv, descripcion , idsistema ) VALUES ('Ubuntu', 'Es otra de las más elegidas distribuciones de Linux en cualquier equipo. Y es que su sencillo proceso de instalación hace que podamos tener Ubuntu en nuestro equipo en un abrir y cerrar de ojos.
+Cuenta con una tienda de aplicaciones que permite la instalación y actualización de software desde la propia interfaz gráfica, lo que simplifica su uso. Es muy similar a Windows en cuanto a diseño.', 2); 
+INSERT INTO DistriVersion(nombredv, descripcion , idsistema ) VALUES ('Pear OS', 'Pear es una distribucion de Linux para escritorio basada en Ubuntu que destaca por su facilidad de uso y por contar con una interfaz que recuerda, y mucho, a macOS X. Por lo tanto, si eres usuario de mac,
+entonces puede ser una gran alternativa para pasarte al entorno Linux de manera cómoda.', 2); 
+
+
+
+INSERT INTO DistriVersion (nombredv, descripcion , idsistema ) VALUES ('Mac OS X Jaguar', 'Fue lanzado el 23 de agosto de 2002 para instalaciones de una sola computadora y en un "paquete familiar", que permitía cinco instalaciones en computadoras separadas en un hogar. 
+Jaguar fue el primer lanzamiento de Mac OS X en utilizar públicamente su nombre en clave en marketing y publicidad. ', 3); 
+INSERT INTO DistriVersion(nombredv, descripcion , idsistema ) VALUES ('Mac OS X Leopard', 'Leopard se encuentra disponible en 2 formas: una versión de escritorio para uso personal y una versión para servidores conocida como Mac OS X Server.
+Según Apple, Leopard contiene más de 300 cambios y mejoras sobre su predecesor, Mac OS X Tiger, cubriendo componentes del núcleo del sistema operativo, así como también las aplicaciones incluidas y las herramientas de desarrollo. ', 3); 
+INSERT INTO DistriVersion(nombredv, descripcion , idsistema ) VALUES ('Mac OS X Lion', ' Incluye elementos heredados del sistema iOS. El 20 de julio de 2011 se puso a disposición del público OS X Lion a través de descarga digital en la tienda de aplicaciones Mac App Store, costando 29,99 dólares.
+Mac OS X Lion Server está disponible como descarga independiente en la Mac App Store con un precio de 39.99 euros, que se suma al precio de compra de la versión cliente de Mac OS X Lion', 3); 
+
+
+
+
+
+
+INSERT INTO Provedor(nombrepro,idsistema) VALUES ('Microsoft',1);
+INSERT INTO Provedor(nombrepro,idsistema) VALUES ('NO FOUND',2);
+INSERT INTO Provedor(nombrepro,idsistema) VALUES ('Apple',3);

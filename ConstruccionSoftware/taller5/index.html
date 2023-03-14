@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+         <head>
+         
+                  <title>formulario</title>
+                  <meta charset="utf-8"/>
+                  <meta name="description" content="Este es mi primer formulario"/>
+                  <meta name="author" content="Mauricio Bravo"/>
+                  <meta name="keywords" content="Pagina web, formulario"/>
+                  <meta name="viewport" content="width=device_width,initial-scale=1.0"/>
+                  <link rel="stylesheet" href="css/style.css">
+                  
+
+        </head>
+
+
+        <body>
+            <h1>Registration form</h1>
+            <p>Please fill out this form with the required information</p>
+            <form action='https://fcc-registration-form.com'>
+                <fieldset>
+                    <label>Enter your first name: <input type="text" name="firs-name" required> </label>
+                    <label>Enter your last name: <input type="text" name="last-name" required> </label>
+                    <label>Enter your email: <input type="email" name="email" required> </label>
+                    <label>Create a new password: <input type="password" name="password" pattern="[a-z0-5]{8,}" required> </label>
+
+                </fieldset>
+
+                <fieldset>
+                    <label ><input type="radio" name="account-type" class="inline"> Persoonal account</label>
+                    <br>
+                    <label ><input type="radio" name="account-type" class="inline"> Business account</label>
+                    <br>
+                    <label ><input type="checkbox" name="terms" class="inline"> I accept <a href="https://www.freecodecamp.org/news/terms-of-service/"> terms and conditions </a></label>
+                    <br>
+                </fieldset>
+
+                <fieldset>
+                    <label >Upload a profile picture<input type="file" name="file"></label>
+                    <br>
+                    <label >input your age (years): <input type="number" name="age" min="5" max="8"> <br> Input the date <input type="datetime-local" ></label>
+                    <br>
+                    <label > How did you hear about hear
+                       <select name="referrer">
+                        <option value=""> Select one</option>
+                        <option value="1"> freecodecamp News</option>
+                        <option value="2"> freecodecamp Youtube Channel</option>
+                        <option value="3"> freecodecamp forum</option>
+                        <option value="4"> Other</option>
+
+                       </select> 
+
+
+                    </label>
+
+                    <label >Provide a bio: 
+                        <textarea name="bio" rows="3" cols="30" placeholder="I like coding on the beach..-"></textarea>
+                    </label>
+
+                </fieldset>
+
+                <input type="submit" value="Submit" />
+
+
+            
+
+            </form>
+            
+
+                
+ 
+        </body>
+
+
+
+
+
+
+
+</html>

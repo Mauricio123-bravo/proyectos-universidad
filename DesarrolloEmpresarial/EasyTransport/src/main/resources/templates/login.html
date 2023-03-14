@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="layout/layout :: head">
+</head>
+<body class="body">
+<header th:replace="layout/layoutListar :: header"></header>
+
+
+<!-- Section: Design Block -->
+<section class=" text-center text-lg-start">
+
+	<div class="card mb-3">
+		<div class="row g-0 d-flex align-items-center">
+			<div class="col-lg-4 d-none d-lg-flex">
+				<img id="trackerlogin" src="https://retos-operaciones-logistica.eae.es/wp-content/uploads/2016/07/empresas-de-transporte.jpg" alt="Trendy Pants and Shoes"
+					 class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+			</div>
+			<div class="col-lg-8">
+				<div class="card-body py-5 px-md-5">
+
+					<form th:action="@{/login}" method="post">
+						<!-- username input -->
+						<div class="form-outline mb-4">
+							<h1 id="h1login">EASY TRANSPORT</h1>
+							<input type="text" id="form2Example1"  name="username" class="form-control" />
+							<label class="form-label" for="form2Example1">Username</label>
+						</div>
+
+						<!-- Password input -->
+						<div class="form-outline mb-4">
+							<input type="password" id="form2Example2" name="password" class="form-control" />
+							<label class="form-label" for="form2Example2">Password</label>
+						</div>
+
+						<!-- 2 column grid layout for inline styling -->
+
+						<div class="col-lg-6 login-btm login-button">
+							<input type="submit" class="btn btn-lg btn-primary btn-block"
+								   value="Iniciar Sesion" />
+						</div>
+						</br>
+
+
+						<a style="font-size: 20px" th:href="@{/}">Regresar</a>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Section: Design Block -->
+
+<footer th:replace="layout/layout :: footer">
+
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+

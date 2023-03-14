@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layoutListar :: head">
+    <meta name="description" content="Creacion de conductores"/>
+    <title>Crear Conductores</title>
+
+</head>
+
+<body class="body">
+<header th:replace="layout/layoutListar :: header"></header>
+
+</br>
+</br>
+
+<section>
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Crear Conductor</h2>
+
+                            <form th:object="${conductor1}" th:action="@{/crearConductor}" method="post">
+
+                                <div class="form-outline mb-4">
+                                    <label for="nombreconductor">Nombre Conductor:</label>
+                                    <input id="nombreconductor" type="text" placeholder="ingrese el nombre del conductor" class="font-control"  name="nombreconductor" th:field="*{nombreconductor}"/>
+                                </div>
+
+
+                                <div class="form-outline mb-4">
+                                    <label for="apellidoconductor">Apellido Conductor:</label>
+                                    <input id="apellidoconductor" type="text" placeholder="ingrese el apellido del conductor" class="font-control"  name="apellidoconductor" th:field="*{apellidoconductor}"/>
+                                </div>
+
+
+                                <div class="form-outline mb-4">
+                                    <label for="idempresa">Nombre Empresa</label>
+                                    <select class="form-control" id="idempresa" th:fiel="*{idempresa}" name="idempresa">
+                                        <option th:each="empresa:${empresa}"
+                                                th:value="${empresa.idempresa}"
+                                                th:text="${empresa.nombreempresa}"
+                                                th:if="${empresa.estado}==true"
+                                        />
+
+                                    </select>
+                                </div>
+
+
+                                <div class="form-outline mb-4">
+                                    <label for="idvehiculo">Vehiculo</label>
+                                    <select class="form-control" id="idvehiculo" th:fiel="*{idvehiculo}" name="idvehiculo">
+                                        <option th:each="vehiculo:${vehiculo}"
+                                                th:value="${vehiculo.idvehiculo}"
+                                                th:text="${vehiculo.placas}"
+                                                th:if="${vehiculo.estado}==true"
+                                        />
+
+                                    </select>
+                                </div>
+                                </br>
+
+                                <input  type="submit" value="Guardar" class="btn btn-success"/>
+                                </br>
+                                </br>
+
+                                <a style="font-size: 18px" href="listarConductor">Regresar</a>
+
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</br>
+</br>
+
+<footer th:replace="layout/layoutListar :: footer"></footer>
+</body>
+</html>

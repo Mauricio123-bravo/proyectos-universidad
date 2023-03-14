@@ -1,0 +1,75 @@
+CREATE TABLE Usuario (
+
+		
+	idusuario SERIAL PRIMARY KEY NOT NULL,
+	nombreuser VARCHAR(50) NOT NULL,
+	contraseña VARCHAR(50) NOT NULL,
+	idconductor INT4 NOT NULL
+
+);
+
+ALTER TABLE Usuario OWNER TO user_node;
+
+
+
+CREATE TABLE Conductor (
+
+		
+	idconductor SERIAL PRIMARY KEY NOT NULL,
+	nombreconductor VARCHAR(50) NOT NULL,
+	apellidoconductor VARCHAR(50) NOT NULL,
+	idempresa INT4 NOT NULL
+
+);
+
+ALTER TABLE Conductor OWNER TO user_node;
+
+CREATE TABLE Ruta (
+
+		
+	idruta SERIAL PRIMARY KEY NOT NULL,
+	inicio VARCHAR(30) NOT NULL,
+	fin VARCHAR(30) NOT NULL,
+	valor INT NOT NULL,
+	cantpeajes INT NOT NULL,
+	combustible INT NOT NULL,
+	idconductor INT4 NOT NULL
+
+);
+
+ALTER TABLE Ruta OWNER TO user_node;
+
+
+CREATE TABLE Vehiculo (
+
+		
+	idvehiculo SERIAL PRIMARY KEY NOT NULL,
+	placas VARCHAR(30) NOT NULL,
+	modelo INT NOT NULL,
+	marca VARCHAR(30) NOT NULL,
+	idconductor INT4 NOT NULL
+
+);
+
+ALTER TABLE Vehiculo OWNER TO user_node;
+
+
+CREATE TABLE Producto (
+
+		
+	idproducto SERIAL PRIMARY KEY NOT NULL,
+	nombreproducto VARCHAR(30) NOT NULL,
+	tipoproducto INT NOT NULL,
+	pesoproducto VARCHAR(20) NOT NULL,
+	idvehiculo INT4 NOT NULL
+
+);
+
+ALTER TABLE Producto OWNER TO user_node;
+
+
+
+INSERT INTO empresa(nombreempresa,ciudad,estado) VALUES ('cargando','Duitama', true);
+INSERT INTO empresa(nombreempresa,ciudad,estado) VALUES ('cementera','Nobsa', true);
+INSERT INTO empresa(nombreempresa,ciudad,estado) VALUES ('empresa2','Duitama', true);
+

@@ -1,0 +1,23 @@
+INSERT INTO programas (nombreprograma) VALUES ('Arquitectura');
+INSERT INTO programas (nombreprograma) VALUES ('Derecho');
+INSERT INTO programas (nombreprograma) VALUES ('Sistemas');
+
+
+INSERT INTO pensums (nombrepensum, periodopensum, id_programa) VALUES ('Pensum1', 2017, '1');
+INSERT INTO pensums (nombrePensum, periodoPensum, id_programa) VALUES ('Pensum2', 2018, '2');
+INSERT INTO pensums (nombrePensum, periodoPensum, id_programa) VALUES ('Pensum3', 2015, '3');
+
+
+INSERT INTO semestres (nombresemestre) VALUES ('Quinto');
+INSERT INTO semestres (nombresemestre) VALUES ('Sexto');
+INSERT INTO semestres (nombresemestre) VALUES ('Cuarto');
+
+
+INSERT INTO materias (nombremateria, referenciamateria) VALUES ('Materia1', 'Ref1');
+INSERT INTO materias (nombremateria, referenciamateria) VALUES ('Materia2', 'Ref2');
+INSERT INTO materias (nombremateria, referenciamateria) VALUES ('Materia3', 'Ref3');
+
+
+INSERT INTO materiapemsums (id_semestre, id_pensum,id_materia) VALUES (2,1,2);
+INSERT INTO materiapemsums (id_semestre, id_pensum,id_materia) VALUES (1,2,3);
+INSERT INTO materiapemsums (id_semestre, id_pensum,id_materia) VALUES (3,3,1);

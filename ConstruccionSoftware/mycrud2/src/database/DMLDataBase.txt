@@ -1,0 +1,83 @@
+
+
+
+INSERT INTO Universidad (nombreUniversidad , nitUniversidad)
+VALUES('Universidad Santo Tomas', 'asd123');
+
+
+
+INSERT INTO Seccional (direccionSeccional, nombreSeccional, idUniversidad)
+VALUES('Av Universitaria #45-202', 'Tunja', '1');
+
+INSERT INTO Seccional (direccionSeccional, nombreSeccional, idUniversidad)
+VALUES('Cra 9 #51-11', 'Bogota', '1');
+
+INSERT INTO Seccional (direccionSeccional, nombreSeccional, idUniversidad)
+VALUES('Cra 82 #77B-27', 'Medellin', '1');
+
+INSERT INTO Seccional (direccionSeccional, nombreSeccional, idUniversidad)
+VALUES('Cra 18 #9-27', 'Bucaramanga', '1');
+
+INSERT INTO Seccional (direccionSeccional, nombreSeccional, idUniversidad)
+VALUES('Villavicencio, Meta', 'Villavicencio', '1');
+
+
+
+
+INSERT INTO Facultad (nombre_facultad ,idSeccional )
+VALUES('Facultad Ingenieria Sistemas', '1');
+
+INSERT INTO Facultad (nombre_facultad ,idSeccional )
+VALUES('Facultad Derecho', '5');
+
+INSERT INTO Facultad (nombre_facultad ,idSeccional )
+VALUES('Facultad Ingenieria Industrial', '3');
+
+INSERT INTO Facultad (nombre_facultad ,idSeccional )
+VALUES('Facultad Contaduria', '2');
+
+INSERT INTO Facultad (nombre_facultad ,idSeccional )
+VALUES('Facultad Ingenieria Civil', '4');
+
+
+
+
+INSERT INTO Docente (documento_docente , nombres_docente, apellidos_docente , tipoDocente ,cod_facultad )
+VALUES('123456', 'Leonel', 'Messi', '4', '1');
+
+INSERT INTO Docente (documento_docente , nombres_docente, apellidos_docente , tipoDocente ,cod_facultad )
+VALUES('123789', 'Antonella', 'Rocuzzo', '2', '2');
+
+INSERT INTO Docente (documento_docente , nombres_docente, apellidos_docente , tipoDocente ,cod_facultad )
+VALUES('456456', 'Georgina', 'Rodriguez', '1', '4');
+
+INSERT INTO Docente (documento_docente , nombres_docente, apellidos_docente , tipoDocente ,cod_facultad )
+VALUES('123123', 'Cristiano', 'Ronaldo', '3', '5');
+
+
+
+
+INSERT INTO Asignaturas (semestreAsignatura ,nombreAsignatura ,codigoAsignatura ,tipoAsignatura , idDocente  )
+VALUES('4', 'Ecuaciones Diferenciales', '021', 'Ciencias Basicas', '2');
+
+
+INSERT INTO Asignaturas (semestreAsignatura ,nombreAsignatura ,codigoAsignatura ,tipoAsignatura , idDocente  )
+VALUES('1', 'Ingles I', '031', 'Idiomas', '1');
+
+
+INSERT INTO Asignaturas (semestreAsignatura ,nombreAsignatura ,codigoAsignatura ,tipoAsignatura , idDocente  )
+VALUES('3', 'Epistemologia', '011', 'Humanidades', '3');
+
+INSERT INTO Asignaturas (semestreAsignatura ,nombreAsignatura ,codigoAsignatura ,tipoAsignatura , idDocente  )
+VALUES('5', 'Construccion de Software', '041', 'De carrera', '4');
+
+
+
+
+
+
+
+
+
+
+

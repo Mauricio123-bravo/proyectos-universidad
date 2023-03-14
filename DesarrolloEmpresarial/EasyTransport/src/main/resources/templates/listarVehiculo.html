@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layoutListar :: head">
+
+</head>
+
+<body class="body">
+<header th:replace="layout/layoutListar :: header"></header>
+</br>
+<h3 th:text="${titulo}" style="text-align: center;color: #373b3e"></h3>
+<br/>
+<div class="container" >
+    <table id="tablax" class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <td> Id Vehiculo </td>
+            <td> Placas </td>
+            <td> Modelo </td>
+            <td> Marca </td>
+            <td> Estado </td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="vehiculo: ${vehiculo}" th:if="${vehiculo.estado}==true" >
+            <td th:text=" ${vehiculo.idvehiculo}"></td>
+            <td th:text=" ${vehiculo.placas}"></td>
+            <td th:text=" ${vehiculo.modelo}" ></td>
+            <td th:text=" ${vehiculo.marca}" ></td>
+            <td th:if=" ${vehiculo.estado}==true" th:text="ACTIVE"></td>
+
+            <!-- <td><a class="btn btn-danger btn-xs" th:href="@{/eliminarVehiculo/} + ${vehiculo.idvehiculo}" th:text="EliminarBD" onclick="return confirm('¿Esta seguro de esliminar el registro?')"></a></td>-->
+            <td><a class="btn btn-danger btn-xs" th:href="@{/eliminarIdVeh/}+${vehiculo.idvehiculo}" th:text="Eliminar" onclick="return confirm('¿Esta seguro de eliminar el registro?')"></a></td>
+            <td><a class="btn btn-info btn-xs" th:href="@{/editarVehiculo/{id}(id=${vehiculo.idvehiculo})}" th:text="Editar"  ></a></td>
+
+
+
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/crearVehiculo}" class="btn btn-outline-primary">Nuevo Vehiculo</a>
+
+    </br>
+
+    <a style="font-size: 18px" href="/">Regresar</a>
+</div>
+
+
+<footer th:replace="layout/layoutListar :: footer"></footer>
+</body>
+</html>

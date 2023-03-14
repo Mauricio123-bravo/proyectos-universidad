@@ -1,0 +1,16 @@
+CREATE TABLE facultad (
+    facultadid INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_facultad VARCHAR(255)NOT NULL
+);
+
+CREATE TABLE estudiante(
+    estudianteid INT AUTO_INCREMENT PRIMARY KEY,
+    nombres_estudiantes VARCHAR(255)NOT NULL,
+    apellidos_estudiantes VARCHAR(255) NOT NULL,
+    codigo INT NOT NULL,
+    estado BOOLEAN NOT NULL, 
+    idfacultad INT NOT NULL
+);
+
+ALTER TABLE estudiante ADD FOREIGN KEY (idfacultad)
+REFERENCES facultad(facultadid);

@@ -1,0 +1,13 @@
+Tabla conversion Docentes
+
+1 = Docente Timpo completo
+2 = Docente, Decano
+3 = Docente, Director U10
+4 = Docente, Director Investigacion
+
+Tabla conversion tipoAsignatura
+1 = De carrera
+2 = Ciencias Basicas
+3 = Humanidades
+4 = Idiomas
+ 

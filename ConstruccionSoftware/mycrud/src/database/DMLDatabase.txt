@@ -1,0 +1,26 @@
+INSERT INTO facultad (nombre_facultad)
+VALUES('facultad de ingenieria de Sistemas');
+INSERT INTO facultad (nombre_facultad)
+VALUES('facultad de ingenieria mecanica');
+INSERT INTO facultad (nombre_facultad)
+VALUES('facultad de ingenieria civil');
+INSERT INTO facultad (nombre_facultad)
+VALUES('facultad de Arquitectura');
+INSERT INTO facultad (nombre_facultad)
+VALUES('facultad de ingenieria industrial');
+
+
+INSERT INTO estudiante(nombres_estudiantes,apellidos_estudiantes,codigo,estado,idfacultad)
+VALUES('Pepe','Gomez',123,true,1);
+
+INSERT INTO estudiante(nombres_estudiantes,apellidos_estudiantes,codigo,estado,idfacultad)
+VALUES('Pepa','pig',456,true,2);
+
+INSERT INTO estudiante(nombres_estudiantes,apellidos_estudiantes,codigo,estado,idfacultad)
+VALUES('Carlos','Lopez',789,true,3);
+
+INSERT INTO estudiante(nombres_estudiantes,apellidos_estudiantes,codigo,estado,idfacultad)
+VALUES('laura','Alvarez',321,true,4);
+
+INSERT INTO estudiante(nombres_estudiantes,apellidos_estudiantes,codigo,estado,idfacultad)
+VALUES('Pipe','Bernal',193,true,5);

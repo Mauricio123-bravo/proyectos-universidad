@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layoutListar :: head">
+    <meta name="description" content="Creacion de rutas"/>
+    <title>Crear Rutas</title>
+</head>
+
+<body class="body">
+<header th:replace="layout/layoutListar :: header"></header>
+</br>
+</br>
+
+<section>
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Crear Ruta</h2>
+
+                            <form th:object="${ruta1}" th:action="@{/crearRuta}" method="post">
+
+                                <div class="form-outline mb-4">
+                                    <label for="inicioruta">Origen Ruta:</label>
+                                    <input id="inicioruta" type="text" placeholder="ingrese el origen de la ruta" class="font-control"  name="inicio" th:field="*{inicio}"/>
+                                </div>
+
+
+                                <div class="form-outline mb-4">
+                                    <label for="destinoruta">Destino Ruta:</label>
+                                    <input id="destinoruta" type="text" placeholder="ingrese el destino de la ruta" class="font-control"  name="destino" th:field="*{destino}"/>
+                                </div>
+
+
+                                <div class="form-outline mb-4">
+                                    <label for="valueruta"> Valor Ruta: </label>
+                                    <input id="valueruta" type="number" placeholder="ingrese el valor de la ruta" class="font-control"  name="valor" th:field="*{valor}"/>
+                                </div>
+
+
+                                <div class="form-outline mb-4">
+                                    <label for="peajesruta"> Peajes Ruta: </label>
+                                    <input id="peajesruta" type="number" placeholder="ingrese la cantidad de peajes" class="font-control"  name="cantpeajes" th:field="*{cantpeajes}"/>
+                                </div>
+
+
+                                <div class="form-outline mb-4">
+                                    <label for="combusruta"> Combustible Ruta: </label>
+                                    <input id="combusruta" type="number" placeholder="ingrese el combustible gastado en el viaje" class="font-control"  name="combustible" th:field="*{combustible}"/>
+                                </div>
+
+
+                                <div class="form-outline mb-4">
+                                    <label for="idconductor">Nombre Conductor</label>
+                                    <select class="form-control" id="idconductor" th:fiel="*{idconductor}" name="idconductor">
+                                        <option th:each="conductor:${conductor1}"
+                                                th:value="${conductor.idconductor}"
+                                                th:text="${conductor.nombreconductor}"
+                                                th:if="${conductor.estado}==true"
+                                        />
+
+                                    </select>
+                                </div>
+                                </br>
+
+                                <input  type="submit" value="Guardar" class="btn btn-success"/>
+                                </br>
+                                </br>
+
+                                <a style="font-size: 18px" href="listarRuta">Regresar</a>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</br>
+</br>
+
+<footer th:replace="layout/layoutListar :: footer"></footer>
+
+</body>
+</html>
+
+

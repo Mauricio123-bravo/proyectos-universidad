@@ -1,0 +1,60 @@
+CREATE TABLE Universidad (
+    idUniversidad INT AUTO_INCREMENT PRIMARY KEY,
+    nombreUniversidad VARCHAR(200)NOT NULL,
+    nitUniversidad VARCHAR(200)NOT NULL
+);
+
+CREATE TABLE Seccional(
+
+    idSeccional INT AUTO_INCREMENT PRIMARY KEY,
+    direccionSeccional VARCHAR(200)NOT NULL,
+    nombreSeccional VARCHAR(200)NOT NULL,
+    idUniversidad INT   
+
+);
+
+
+CREATE TABLE Facultad(
+
+    cod_facultad INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_facultad VARCHAR(200)NOT NULL,
+    idSeccional INT     
+);
+
+CREATE TABLE Docente(
+
+	cod_docente INT AUTO_INCREMENT PRIMARY KEY,
+    documento_docente VARCHAR(200)NOT NULL,
+    nombres_docente VARCHAR(200)NOT NULL,
+    apellidos_docente VARCHAR(200)NOT NULL,
+    tipoDocente INT,
+    cod_facultad INT
+
+	
+);
+
+CREATE TABLE Asignaturas(
+
+	idAsignatura INT AUTO_INCREMENT PRIMARY KEY,
+    semestreAsignatura INT,
+    nombreAsignatura VARCHAR(200)NOT NULL,
+    codigoAsignatura INT,
+    tipoAsignatura VARCHAR(200)NOT NULL,
+    idDocente INT
+     
+
+
+);
+
+
+ALTER TABLE Seccional ADD FOREIGN KEY (idUniversidad )
+REFERENCES Universidad (idUniversidad );
+
+ALTER TABLE Facultad ADD FOREIGN KEY (idSeccional )
+REFERENCES Seccional (idSeccional );
+
+ALTER TABLE Docente ADD FOREIGN KEY (cod_facultad)
+REFERENCES Facultad (cod_facultad );
+
+ALTER TABLE Asignaturas ADD FOREIGN KEY (idDocente )
+REFERENCES Docente (cod_docente);

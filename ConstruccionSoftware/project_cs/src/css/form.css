@@ -1,0 +1,50 @@
+
+
+.formulario{
+    border:solid 2px #708090;
+    border-radius: 15px;
+    box-shadow: 12px 12px 15px #ABCABC;
+    background:#dcdcdc;
+    margin:0 auto;
+    width :450px;
+    height: 505px;
+    padding: 30px ;
+    
+}
+
+.formulario output{
+    display:block;
+    font-weight:bold;
+    text-align:left;
+    width:140px;
+    float:left;
+
+}
+
+.formulario input{
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    background: none;
+    outline: none;
+    resize: none;
+    border: 0;
+    border-bottom: 2px solid #bebed2;
+    transition: all .3s;
+
+}
+
+.formulario button{
+    clear:both;
+    width:100px;
+   
+    background:#696969; 
+    color : #fff;
+    font-size:18px;
+    font-weight:bold;
+    text-decoration: none;
+
+    float: right;
+    padding: 8px 12px;
+   
+}

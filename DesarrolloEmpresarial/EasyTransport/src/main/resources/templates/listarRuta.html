@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layoutListar :: head">
+
+</head>
+
+<body class="body">
+<header th:replace="layout/layoutListar :: header"></header>
+</br>
+<h3 th:text="${titulo}" style="text-align: center;color: #373b3e"></h3>
+<br/>
+<div class="container" >
+    <table id="tablax" class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <td> Id Ruta</td>
+            <td> Inicio</td>
+            <td> Destino </td>
+            <td> Valor </td>
+            <td> Cantidad Peajes </td>
+            <td> Combustible </td>
+            <td> Estado </td>
+            <td> Conductor </td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ruta: ${ruta}" th:if="${ruta.estado}==true" >
+            <td th:text=" ${ruta.idruta}"></td>
+            <td th:text=" ${ruta.inicio}"></td>
+            <td th:text=" ${ruta.destino}"></td>
+            <td th:text=" ${ruta.valor}" ></td>
+            <td th:text=" ${ruta.cantpeajes}" ></td>
+            <td th:text=" ${ruta.combustible}" ></td>
+            <td th:if=" ${ruta.estado}==true" th:text="ACTIVE"></td>
+            <td th:text=" ${ruta.idconductor.nombreconductor}" ></td>
+            <!--<td><a class="btn btn-danger btn-xs" th:href="@{/eliminarRuta/} + ${ruta.idruta}" th:text="EliminarBD" onclick="return confirm('¿Esta seguro de esliminar el registro?')"></a></td>-->
+            <td><a class="btn btn-danger btn-xs" th:href="@{/eliminarIdRuta/}+${ruta.idruta}" th:text="Eliminar" onclick="return confirm('¿Esta seguro de eliminar el registro?')"></a></td>
+            <td><a class="btn btn-info btn-xs" th:href="@{/editarRuta/{id}(id=${ruta.idruta})}" th:text="Editar"  ></a></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/crearRuta}" class="btn btn-outline-primary">Nueva Ruta</a>
+
+
+    </br>
+
+    <a style="font-size: 18px" href="/">Regresar</a>
+</div>
+
+
+<footer th:replace="layout/layoutListar :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+h1, h2, p{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+body{
+
+   background-image: url(https://thumbs.dreamstime.com/b/fondo-asado-de-los-granos-caf%C3%A9-127907001.jpg) ;
+    
+    
+
+}
+
+
+
+.menu{
+    width: 1000px;
+    height: 900px;
+    background-color: burlywood;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px 15px 20px;
+    max-width: 500px;
+  
+}
+.flavor,.postre{
+    text-align: left;
+    width: 85%;
+
+}
+.price{
+   text-align: right;
+   width: 15%;
+
+}
+
+
+.item p{
+
+    display: inline-block;
+
+
+}
+
+img{
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: -25px;
+
+}
+
+footer{
+    font-size: 14px;
+}
+
+.address{
+    margin-bottom: 5px;
+
+}
+
+a{
+    color: black;
+
+}
+
+.bottom-line{
+
+    margin-top: 25px;
+}
+

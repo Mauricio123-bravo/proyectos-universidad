@@ -1,0 +1,16 @@
+Mockups--->MISMO WELCOME PAGE PARA ADMIN Y USER.
+
+ADMINISTRADOR --> va a tener acceso a:
+-Empresa
+-Conductor
+-Vehiculo
+-Producto
+-Ruta
+
+USUARIO --> va a tener acceso a:
+-Ruta: puede dejar la ruta como completada
+-Producto: solo visualizar
+
+
+
+Estos mokcups tienen unos colores oscuros con el fin de generar en el usuario una interfaz con aspecto elegante.

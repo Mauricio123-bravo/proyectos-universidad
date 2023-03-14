@@ -1,0 +1,5 @@
+	Ubuntu	Es otra de las más elegidas distribuciones de Linux en cualquier equipo. Y es que su sencillo proceso de instalación hace que podamos tener Ubuntu en nuestro equipo en un abrir y cerrar de ojos. Cuenta con una tienda de aplicaciones que permite la instalación y actualización de software desde la propia interfaz gráfica, lo que simplifica su uso. Es muy similar a Windows en cuanto a diseño.
+
+		Pear OS	Pear es una distribucion de Linux para escritorio basada en Ubuntu que destaca por su facilidad de uso y por contar con una interfaz que recuerda, y mucho, a macOS X. Por lo tanto, si eres usuario de mac, entonces puede ser una gran alternativa para pasarte al entorno Linux de manera cómoda.
+
+	Mac OS X Jaguar	Fue lanzado el 23 de agosto de 2002 para instalaciones de una sola computadora y en un "paquete familiar", que permitía cinco instalaciones en computadoras separadas en un hogar. Jaguar fue el primer lanzamiento de Mac OS X en utilizar públicamente su nombre en clave en marketing y publicidad.

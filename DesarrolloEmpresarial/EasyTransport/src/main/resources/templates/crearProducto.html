@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layoutListar :: head">
+  <meta name="description" content="Creacion de productos"/>
+  <title>Crear Productos</title>
+
+</head>
+
+<body class="body">
+<header th:replace="layout/layoutListar :: header"></header>
+</br>
+</br>
+
+<section>
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Crear Producto</h2>
+
+                            <form th:object="${producto1}" th:action="@{/crearProducto}" method="post">
+
+                                <div class="form-outline mb-4">
+                                    <label for="nombreproducto">Nombre Producto:</label>
+                                    <input id="nombreproducto" type="text" placeholder="ingrese el nombre del producto" class="font-control"  name="nombreproducto" th:field="*{nombreproducto}"/>
+                                </div>
+
+
+                                <div class="form-outline mb-4">
+                                <label for="tipoproduc">Tipo producto:</label>
+                                <select id="tipoproduc" class="font-control"  name="tipoproducto" th:field="*{tipoproducto}">
+                                    <option th:value="${0}" th:text="${opcion1}"></option>
+                                    <option th:value="${1}" th:text="${opcion2}"></option>
+                                    <option th:value="${2}" th:text="${opcion3}"></option>
+                                </select>
+                                </div>
+
+
+                                <div class="form-outline mb-4">
+                                <label for="pesoproduct">peso producto:</label>
+                                <input id="pesoproduct" type="text" placeholder="ingrese el peso del producto" class="font-control"  name="pesoproducto" th:field="*{pesoproducto}"/>
+                                </div>
+
+
+                                <div class="form-outline mb-4">
+                                <label for="idvehiculo">Placas Vehiculo</label>
+                                <select class="form-control" id="idvehiculo" th:fiel="*{idvehiculo}" name="idvehiculo">
+                                    <option th:each="vehiculo:${vehiculo}"
+                                            th:value="${vehiculo.idvehiculo}"
+                                            th:text="${vehiculo.placas}"
+                                            th:if="${vehiculo.estado}==true"
+                                    />
+
+                                </select>
+                                </div>
+                                </br>
+
+                                <input  type="submit" value="Guardar" class="btn btn-success"/>
+                                </br>
+                                </br>
+
+                                <a style="font-size: 18px" href="listarProducto">Regresar</a>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</br>
+</br>
+
+<footer th:replace="layout/layoutListar :: footer"></footer>
+
+</body>
+</html>

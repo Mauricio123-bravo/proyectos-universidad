@@ -1,0 +1,46 @@
+CREATE TABLE programas(
+   idprograma SERIAL PRIMARY KEY NOT NULL,
+   nombreprograma VARCHAR(200) NOT NULL
+);
+ALTER TABLE programas owner to user_java;
+
+CREATE TABLE pensums(
+   idpensums SERIAL PRIMARY KEY NOT NULL,
+   nombrepensum VARCHAR(200) NOT NULL,
+   periodopensum INT NOT NULL,
+   id_programa INT4 NOT NULL	
+);
+ALTER TABLE pensums owner to user_java;
+
+CREATE TABLE semestres(
+   idsemestre SERIAL PRIMARY KEY NOT NULL,
+   nombresemestre VARCHAR(200) NOT NULL
+);
+ALTER TABLE semestres owner to user_java;
+
+CREATE TABLE materias(
+   idmateria SERIAL PRIMARY KEY NOT NULL,
+   nombremateria VARCHAR(200) NOT NULL,	
+   referenciamateria VARCHAR(200) NOT NULL
+);
+ALTER TABLE materias owner to user_java;
+
+CREATE TABLE materiapemsums(
+   idMateriapensum SERIAL PRIMARY KEY NOT NULL,
+   id_semestre INT4 NOT NULL,
+   id_pensum INT4 NOT NULL,
+   id_materia INT4 NOT NULL
+);
+ALTER TABLE materiapemsums owner to user_java;
+
+-------CONSTRAINT
+ALTER TABLE pensums ADD CONSTRAINT idpensums_programas_fk FOREIGN KEY(id_programa) REFERENCES programas(idprograma);
+
+ALTER TABLE materiapemsums ADD CONSTRAINT idmateriapensums_semestres_fk 
+FOREIGN KEY(id_semestre) REFERENCES semestres(idsemestre) ON DELETE CASCADE;
+
+ALTER TABLE materiapemsums ADD CONSTRAINT idmateriapensums_pensums_fk 
+FOREIGN KEY(id_pensum) REFERENCES pensums(idpensums) ON DELETE CASCADE;
+
+ALTER TABLE materiapemsums ADD CONSTRAINT idmateriapensums_materia_fk 
+FOREIGN KEY(id_materia) REFERENCES materias(idmateria) ON DELETE CASCADE;

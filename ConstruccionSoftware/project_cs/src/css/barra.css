@@ -1,0 +1,40 @@
+.topnav {
+    background: linear-gradient(to right, white, #8393E8);
+    overflow: hidden;
+}
+
+/*Estilo de la barra de navegacion*/
+.topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+  
+}
+
+
+
+li.opcion
+{
+   float:left;
+   margin:0px 1px;
+   border:1px solid black;
+   border-bottom:4px black solid;
+   border-right:4px black solid;
+   background: #bbc4f1;
+}
+a.opcion
+{
+   display:block;
+   padding:5px;
+}
+a.opcion:hover
+{
+    background-color: white;
+}

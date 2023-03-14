@@ -1,0 +1,48 @@
+CREATE TABLE sistemaOperativo(
+
+	idsistemao SERIAL PRIMARY KEY NOT NULL,
+	nombresis VARCHAR(200) NOT NULL,
+	ultimaversion VARCHAR(20) NOT NULL,
+	descripcionsis VARCHAR(400) NOT NULL
+
+
+);
+
+ALTER TABLE sistemaOperativo OWNER TO user_node;
+
+CREATE TABLE DistriVersion(
+
+	id_distriversion SERIAL PRIMARY KEY NOT NULL,
+	nombredv VARCHAR(200) NOT NULL,
+      descripciondv VARCHAR(400) NOT NULL,
+	idsistema INT4 NOT NULL
+
+
+);
+
+
+ALTER TABLE DistriVersion OWNER TO user_node;
+
+
+CREATE TABLE Provedor(
+
+	idprovedor SERIAL PRIMARY KEY NOT NULL,
+	nombrepro VARCHAR(200) NOT NULL,
+	idsistema INT4 NOT NULL
+
+
+);
+
+
+ALTER TABLE Provedor OWNER TO user_node;
+
+
+ALTER TABLE DistriVersion ADD CONSTRAINT
+iddis_sistemas_fk FOREIGN KEY
+(idsistema) REFERENCES sistemaOperativo(idsistemaO )
+ON DELETE CASCADE;
+
+ALTER TABLE Provedor ADD CONSTRAINT
+idprov_sistemas_fk FOREIGN KEY
+(idsistema) REFERENCES sistemaOperativo(idsistemaO )
+ON DELETE CASCADE;

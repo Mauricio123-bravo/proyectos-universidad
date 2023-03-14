@@ -1,0 +1,27 @@
+INSERT INTO programas (nombreprograma) VALUES('Ingenieria Sistemas');
+INSERT INTO programas (nombreprograma) VALUES('Derecho');
+INSERT INTO programas (nombreprograma) VALUES('Ingenieria Civil');
+INSERT INTO programas (nombreprograma) VALUES('Contaduria');
+
+INSERT INTO pensums (nombrepensums,periodopensum,id_programa) VALUES('test1',2019,2);
+INSERT INTO pensums (nombrepensums,periodopensum,id_programa) VALUES('test2',2020,4);
+INSERT INTO pensums (nombrepensums,periodopensum,id_programa) VALUES('test3',2021,1);
+INSERT INTO pensums (nombrepensums,periodopensum,id_programa) VALUES('test4',2022,3);
+
+
+INSERT INTO semestres (nombresemestre) VALUES('Primero');
+INSERT INTO semestres (nombresemestre) VALUES('Segundo');
+INSERT INTO semestres (nombresemestre) VALUES('Tercero');
+INSERT INTO semestres (nombresemestre) VALUES('Cuarto');
+
+
+INSERT INTO materias (nombremateria,referenciamateria) VALUES('Calculo','ref-123');
+INSERT INTO materias (nombremateria,referenciamateria) VALUES('Ingles','ref-445');
+INSERT INTO materias (nombremateria,referenciamateria) VALUES('Cultura Fisica','ref-678');
+INSERT INTO materias (nombremateria,referenciamateria) VALUES('Quimica','ref-021');
+
+INSERT INTO materiaspensums (id_pensum,id_materia,id_semestre) VALUES(2,4,1);
+INSERT INTO materiaspensums (id_pensum,id_materia,id_semestre) VALUES(1,2,4);
+INSERT INTO materiaspensums (id_pensum,id_materia,id_semestre) VALUES(4,3,2);
+INSERT INTO materiaspensums (id_pensum,id_materia,id_semestre) VALUES(3,1,3);
+

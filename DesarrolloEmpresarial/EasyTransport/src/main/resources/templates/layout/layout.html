@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<!-- HEAD -->
+<head th:fragment="head">
+  <title>EASY TRANSPORT</title>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Esta es mi primera pagina web usando JPA,SPRING,MVC" />
+  <meta name="author" content="Mauricio Bravo" />
+  <meta name="keywords" content="Pagina web,crud, programacion" />
+  <link rel="stylesheet" th:href="@{/css/miestilo.css}"/>
+  <link rel="stylesheet" th:href="@{/css/login.css}"/>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+
+
+</head>
+<!-- FIN HEAD -->
+
+<!-- HEADER -->
+<body class="body">
+<header th:fragment="header">
+
+  <div class="di">
+
+    <nav class="navbar">
+
+      <h1><img id="icon" style="align:left" th:src="@{/images/icon.png}">
+        EASY TRANSPORT</h1>
+    </nav>
+  </div>
+  <div class="di">
+
+      <div class="di">
+        <!--<a class="nav-link text-dark" sec:authorize="isAuthenticated()" href="/"> <i class="fas fa-home fa-lg"></i> Home / Dashboard</a>-->
+        <a sec:authorize="!isAuthenticated()" class="logo" th:href="@{/login}">Iniciar Sesión</a>
+        <br/>
+        <a sec:authorize="isAuthenticated()" class="btn btn-primary"
+           data-bs-toggle="collapse"
+           href="/"
+           role="button"
+           aria-expanded="false"
+           aria-controls="collapseExampleCS">
+          <span sec:authentication="name"></span>
+        </a>
+        <form sec:authorize="isAuthenticated()" id="logoutForm" th:action="@{/logout}" method="post">
+          <button class="logo"
+                  onclick="document.getElementById('logoutForm').submit();"
+                  type="submit">
+            Cerrar Sesión
+          </button>
+          <input type="hidden" th:name="${_csrf.parameterName}"
+                 th:value="${_csrf.token}"/>
+        </form>
+
+        <a href="/">Home</a>
+
+
+
+      </div>
+    </div>
+
+  </br>
+  </br>
+  </br>
+  <p style="text-align: center" sec:authorize="!isAuthenticated()"> <img id="cam" th:src="@{/images/camion.png}" sec:authorize="!isAuthenticated()">
+  </p>
+  <h3 style="text-align: center" sec:authorize="!isAuthenticated()">"TRABAJEMOS JUNTOS"</h3>
+
+
+  </header>
+
+<!-- FIN HEADER -->
+
+<div class="col-sm-12" th:fragment="informacion">
+  <div class="alert alert-danger" th:if="${error != null}"
+       th:text="${error}"></div>
+  <div class="alert alert-info" th:if="${info != null}"
+       th:text="${info}"></div>
+  <div class="alert alert-success" th:if="${success != null}"
+       th:text="${success}"></div>
+  <div class="alert alert-warning" th:if="${warning != null}"
+       th:text="${warning}"></div>
+</div>
+
+<!-- FOOTER -->
+<footer th:fragment="footer">
+  <p class="text-center">&copy; Mauricio B.</p>
+  <p>+57 3106070910</p>
+  <p>easytransport@gmail.com</p>
+  <p>Duitama,Colombia</p>
+</footer>
+<!-- FIN FOOTER -->
+</body>
+</html>

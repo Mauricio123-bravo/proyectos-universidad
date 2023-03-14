@@ -1,0 +1,3 @@
+*  llamar atributo de la tabla bd
+$  llamar algun valor
+@  llamar una ruta 

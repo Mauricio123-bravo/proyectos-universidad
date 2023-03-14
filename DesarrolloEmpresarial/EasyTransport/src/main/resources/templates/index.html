@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+<head th:replace="layout/layout :: head">
+</head>
+<body class="body">
+<div th:replace="layout/layout :: informacion"></div>
+<header th:replace="layout/layout :: header"></header>
+
+<div class="container col-sm-12 p-4">
+    <div class="row">
+        <br/>
+        <div class="col-sm-9">
+            <!--		Aqui va todo el codigo principal		-->
+            <div class="container">
+                <div class="row g-3">
+                    <div sec:authorize="hasAnyRole('ROLE_ADMIN')" class="col-4" style="max-width: 18rem;">
+                        <div class="row-cols-12">
+                            <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                                <div class="card-header">Empresas</div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a th:href="@{'/listarEmpresa'}">Listado de Empresas</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div sec:authorize="hasAnyRole('ROLE_ADMIN')" class="col-4" style="max-width: 18rem;">
+                        <div class="row-cols-12">
+                            <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                                <div class="card-header">Conductores</div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a th:href="@{'/listarConductor'}">Listado de Conductores</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div sec:authorize="hasAnyRole('ROLE_ADMIN')" class="col-4" style="max-width: 18rem;">
+                        <div class="row-cols-12">
+                            <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                                <div class="card-header">Vehiculos</div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a th:href="@{'/listarVehiculo'}">Listado de Vehiculos</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_USER')" class="col-4" style="max-width: 18rem;">
+                        <div class="row-cols-12">
+                            <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                                <div class="card-header">Rutas</div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a th:href="@{'/listarRuta'}">Listado de Rutas</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_USER')" class="col-4" style="max-width: 18rem;">
+                        <div class="row-cols-12">
+                            <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                                <div class="card-header">Productos</div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a th:href="@{'/listarProducto'}">Listado de Productos</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</br>
+</br>
+<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+body{
+
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, white,#8393E8);
+    position: relative;
+    overflow: hidden;
+    color: black;
+}
+
+footer{
+
+    background: linear-gradient(to right, white, #FFC979);
+    color: black;
+    position:relative;
+    bottom: -262px;
+    
+   
+}
+
+
+
+
+.header_navdv .contenedor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px ;
+}
+
+
+
